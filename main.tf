@@ -14,9 +14,15 @@ variable "name_length" {
   type        = number
 }
 
+variable "separator" {
+  description = "Separator for the generated pet name"
+  type        = string
+}
+
 resource "random_pet" "name" {
+
   length    = var.name_length
-  separator = "-"
+  separator = var.separator
 }
 
 output "generated_name" {
